@@ -1,12 +1,6 @@
 <!doctype html>
 <title>GitHub Octicons</title>
-
-<h1>GitHub Octicons</h1>
-<p>Ever wanted to use <a href="https://github.com/blog/1106-say-hello-to-octicons">Octicons</a> on your site?  Now you can!</p>
-
-<p>See <a href="https://github.com/styleguide/css/7.0">https://github.com/styleguide/css/7.0</a> for usage instructions.</p>
-
-<small>Disclaimer: Octicons are copyrighted by GitHub.  I am not affiliated in any way with GitHub.  I just think the icons are fancy.</small>
+<div class="content"></div>
 
 <style>
 body {
@@ -18,3 +12,14 @@ a {
 	text-decoration: none;
 }
 </style>
+
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'README.md');
+xhr.send();
+
+xhr.onreadystatechange = function() {
+	if (xhr.readystate = 4 && xhr.status == 200)
+		document.getElementsByClassName('content')[0].innerHTML = xhr.responseText;
+};
+</script>
